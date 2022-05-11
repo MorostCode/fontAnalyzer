@@ -12,6 +12,9 @@ dist
 *.png
 .bat
 .spec
+.zip
+.7z
+.rar
 
 testfile2.py
 testfile3.py

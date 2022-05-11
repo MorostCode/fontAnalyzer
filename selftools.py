@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from fontTools.ttLib import TTFont
 from PyQt5.QtGui import QPixmap
-import platform
 import base64
 import os
 
