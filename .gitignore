@@ -8,8 +8,6 @@ build
 dist
 
 *.enc
-*.jpg
-*.png
 .bat
 .spec
 .zip

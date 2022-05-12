@@ -24,17 +24,17 @@
     <property name="geometry">
      <rect>
       <x>630</x>
-      <y>20</y>
+      <y>18</y>
       <width>26</width>
       <height>26</height>
      </rect>
     </property>
     <property name="toolTip">
-     <string>重置界面</string>
+     <string>reset</string>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-	padding: 2px;
+	padding: 3px;
 	image: url(./iconFile/iconReset.png);
 	border: None;
 	border-radius: 12px;
@@ -60,7 +60,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="toolTip">
-     <string>最小化</string>
+     <string>minimize</string>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
@@ -94,7 +94,7 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="toolTip">
-     <string>关闭</string>
+     <string>close</string>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
@@ -127,8 +127,8 @@ QPushButton:pressed {
 	border-top: 2px solid rgb(88, 88, 88);
 	border-left: 2px solid rgb(88, 88, 88);
 	border-right: 2px solid rgb(88, 88, 88);
-	border-top-left-radius: 16px;
-	border-top-right-radius: 16px;
+	border-top-left-radius: 14px;
+	border-top-right-radius: 14px;
 }</string>
     </property>
     <property name="text">
@@ -139,13 +139,13 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>590</x>
-      <y>20</y>
+      <y>18</y>
       <width>26</width>
       <height>26</height>
      </rect>
     </property>
     <property name="toolTip">
-     <string>上传字体</string>
+     <string>upload</string>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
@@ -168,10 +168,13 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>8</x>
-      <y>13</y>
+      <y>12</y>
       <width>211</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string>by morost</string>
     </property>
     <property name="styleSheet">
      <string notr="true">image: url(./iconFile/fontAnalyzer.png);</string>
@@ -187,17 +190,18 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>280</x>
-      <y>20</y>
+      <y>15</y>
       <width>291</width>
-      <height>26</height>
+      <height>30</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">QLineEdit {
 	font: normal bold 18px &quot;黑体&quot;;
 	color: rgb(223, 223, 223);
-	border-radius: 12px;
+	border-radius: 14px;
 	background-color: rgb(75, 75, 75);
+	padding-left: 40px;	
 }</string>
     </property>
     <property name="text">
@@ -207,13 +211,16 @@ QPushButton:pressed {
      <number>0</number>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
     </property>
     <property name="readOnly">
      <bool>true</bool>
     </property>
     <property name="placeholderText">
-     <string> Upload Font</string>
+     <string>Upload Font</string>
+    </property>
+    <property name="clearButtonEnabled">
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QListWidget" name="listMenu">
@@ -227,12 +234,12 @@ QPushButton:pressed {
     </property>
     <property name="styleSheet">
      <string notr="true">QListWidget {
-	font: normal bold 24px &quot;楷体&quot;;
+	font: normal bold 20px &quot;楷体&quot;;
 	color: rgb(175, 175, 175);
 	background-color: rgb(32, 32, 32);
 	padding-top: 10px;
 	padding-bottom: 10px;
-	border-bottom-left-radius: 18px;
+	border-bottom-left-radius: 14px;
 	border-bottom: 2px solid rgb(88, 88, 88);
 	border-left: 2px solid rgb(88, 88, 88);
 	outline: 0px;
@@ -807,7 +814,7 @@ p, li { white-space: pre-wrap; }
     <property name="styleSheet">
      <string notr="true">QLabel {
 	background-color: rgb(37, 37, 37);
-	border-bottom-right-radius: 18px;
+	border-bottom-right-radius: 14px;
 	border-bottom:2px solid rgb(88, 88, 88);
 	border-right:2px solid rgb(88, 88, 88);
 }</string>
@@ -816,8 +823,30 @@ p, li { white-space: pre-wrap; }
      <string/>
     </property>
    </widget>
-   <zorder>labelBGRight</zorder>
+   <widget class="QPushButton" name="buttonUpload_2">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>20</y>
+      <width>22</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>upload</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	border: None;
+	image: url(./iconFile/iconText.png);
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
    <zorder>labelBGTop</zorder>
+   <zorder>labelBGRight</zorder>
    <zorder>buttonReset</zorder>
    <zorder>buttonMinimize</zorder>
    <zorder>buttonClose</zorder>
@@ -826,6 +855,7 @@ p, li { white-space: pre-wrap; }
    <zorder>lineUpload</zorder>
    <zorder>listMenu</zorder>
    <zorder>pages</zorder>
+   <zorder>buttonUpload_2</zorder>
   </widget>
  </widget>
  <resources/>
