@@ -1,4 +1,4 @@
-# fontAnalyzer开发日志
+# fontAnalyzer
 
 fontAnalyzer旨在用一个简易的小程序快速查看字体详细信息。
 
