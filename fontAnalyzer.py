@@ -5,7 +5,6 @@ from PyQt5.QtCore import Qt, QPoint
 from fontTools.ttLib import TTFont
 from functools import partial
 from PyQt5.uic import loadUi
-import selftools
 import sys
 import os
 
@@ -127,5 +126,4 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)  # 创建QApplication类的实例
     main_window = MainWindow()  # 实例化一个窗口类
     main_window.show()  # 显示窗口
-    # 进入程序主循环 通过exit函数确保主循环安全结束
-    sys.exit(app.exec_())
+    sys.exit(app.exec_())  # 进入程序主循环 通过exit函数确保主循环安全结束
