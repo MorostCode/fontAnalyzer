@@ -11,12 +11,12 @@ fontAnalyzer旨在用一个简易的小程序快速查看字体详细信息。
 - 字体上传功能
 - 界面重置功能
 - BaseInfo页面设计
+- BaseInfo页面功能
 
 
 
 ## 待完成的功能
 
-- BaseInfo页面功能
 - ExtendInfo页面设计
 - ExtendInfo页面功能
 - CharsPreview页面设计
