@@ -5,6 +5,8 @@ from PyQt5.QtCore import Qt, QPoint
 from fontTools.ttLib import TTFont
 from functools import partial
 from PyQt5.uic import loadUi
+import selfFontools
+import selfTools
 import sys
 import os
 
@@ -52,19 +54,18 @@ class MainWindow(QMainWindow):
         self.buttonMinimize.clicked.connect(self.minimize_window)  # 最小化按钮
         self.buttonUpload.clicked.connect(self.upload_font)  # 上传按钮
         self.buttonReset.clicked.connect(self.reset)  # 重置按钮
-        self.listMenu.itemClicked.connect(self.page_change)  # 菜单栏切换页面
+        self.listMenu.itemClicked.connect(self.page_change)  # 点击列表项切换菜单栏页面
 
     # 上传字体函数
     def upload_font(self):
         defaultDir = os.path.join(os.path.expanduser('~'), "Desktop")  # 获取桌面路径
         fontPath, _ = QFileDialog.getOpenFileName(self, "选择字体文件", defaultDir, "类型({})".format("*.ttf *.otf"))
         if fontPath:
-            self.set_base_info(fontPath)  # 显示基本信息
-
-    # 重置界面
-    def reset(self):
-        self.pages.setCurrentIndex(0)
-        self.lineUpload.clear()
+            # 初始化字体数据
+            self.fontPath = fontPath
+            self.lineUpload.setText(os.path.basename(self.fontPath))  # 显示字体名
+            self.set_base_info()  # 填充BaseInfo界面
+            self.set_extend_info()  # 填充ExtendInfo界面
 
     # 切换页面
     def page_change(self, item: QListWidgetItem):
@@ -77,14 +78,53 @@ class MainWindow(QMainWindow):
         else:
             pass
 
-    # 安置BaseInfo界面
-    def set_base_info(self, file_path):
-        if file_path:  # 确保字体路径不为空
-            # 初始化自有数据
-            self.fontPath = file_path
-            # 显示基本信息
-            fileName = os.path.basename(file_path)
-            self.lineUpload.setText(fileName)
+    # 填充BaseInfo界面
+    def set_base_info(self):
+        # 获取信息
+        fileName = os.path.basename(self.fontPath)  # 文件名
+        fileSize = selfTools.get_size(self.fontPath)  # 文件大小
+        glyphs, chars = selfFontools.get_glyph_num(self.fontPath)  # 字形数，字符数
+        createdTime, modifiedTime = selfFontools.get_time(self.fontPath)  # 创建日期，修改日期
+        baseDict = selfFontools.get_font_base_info(self.fontPath)  # 其他基础信息
+        # 设置文件基础信息
+        self.labelFileName2.setText(fileName)
+        self.labelFileSize2.setText(fileSize)
+        self.labelGlyphs2.setText(str(glyphs))
+        self.labelCharacters2.setText(str(chars))
+        self.labelCreatedTime2.setText(createdTime)
+        self.labelModifiedTime2.setText(modifiedTime)
+        # 设置字体基础信息（取自win平台US语言）
+        self.labelFontFamily2.setText(baseDict["Family"])
+        self.labelFontSubfamily2.setText(baseDict["Subfamily"])
+        self.labelUniqueFontID2.setText(baseDict["UniqueID"])
+        self.labelFullFontName2.setText(baseDict["FullName"])
+        self.labelVersion2.setText(baseDict["Version"])
+        self.labelPostScript2.setText(baseDict["PostScript"])
+
+    # 填充ExtendInfo界面
+    def set_extend_info(self):
+        pass
+
+    # 重置界面
+    def reset(self):
+        # 设置所有列表项为未选中
+        for i in range(self.listMenu.count()):
+            self.listMenu.item(i).setSelected(False)
+        self.lineUpload.clear()  # 清空字体名
+        self.pages.setCurrentIndex(0)  # 返回初始页面
+        # 清空BaseInfo界面
+        self.labelFileName2.clear()
+        self.labelFileSize2.clear()
+        self.labelGlyphs2.clear()
+        self.labelCharacters2.clear()
+        self.labelCreatedTime2.clear()
+        self.labelModifiedTime2.clear()
+        self.labelFontFamily2.clear()
+        self.labelFontSubfamily2.clear()
+        self.labelUniqueFontID2.clear()
+        self.labelFullFontName2.clear()
+        self.labelVersion2.clear()
+        self.labelPostScript2.clear()
 
     # 关闭界面
     def close_window(self):

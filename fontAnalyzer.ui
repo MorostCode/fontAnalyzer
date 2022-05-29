@@ -34,8 +34,8 @@
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-	padding: 3px;
-	image: url(./iconFile/iconReset.png);
+	padding: 2px;
+	image: url(./iconFile/reset.png);
 	border: None;
 	border-radius: 12px;
 }
@@ -302,7 +302,7 @@ QListWidget:item:selected {
      <enum>QFrame::Plain</enum>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="pageInitial">
      <widget class="QLabel" name="labelMoreInfo">
@@ -338,9 +338,9 @@ p, li { white-space: pre-wrap; }
      <widget class="QWidget" name="verticalLayoutWidget_2">
       <property name="geometry">
        <rect>
-        <x>160</x>
+        <x>190</x>
         <y>10</y>
-        <width>421</width>
+        <width>391</width>
         <height>531</height>
        </rect>
       </property>
@@ -357,7 +357,7 @@ p, li { white-space: pre-wrap; }
           <string/>
          </property>
          <property name="alignment">
-          <set>Qt::AlignCenter</set>
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
@@ -373,7 +373,7 @@ p, li { white-space: pre-wrap; }
           <string/>
          </property>
          <property name="alignment">
-          <set>Qt::AlignCenter</set>
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
@@ -389,7 +389,7 @@ p, li { white-space: pre-wrap; }
           <string/>
          </property>
          <property name="alignment">
-          <set>Qt::AlignCenter</set>
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
@@ -405,7 +405,7 @@ p, li { white-space: pre-wrap; }
           <string/>
          </property>
          <property name="alignment">
-          <set>Qt::AlignCenter</set>
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
@@ -421,7 +421,7 @@ p, li { white-space: pre-wrap; }
           <string/>
          </property>
          <property name="alignment">
-          <set>Qt::AlignCenter</set>
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
@@ -437,7 +437,7 @@ p, li { white-space: pre-wrap; }
           <string/>
          </property>
          <property name="alignment">
-          <set>Qt::AlignCenter</set>
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
@@ -453,7 +453,7 @@ p, li { white-space: pre-wrap; }
           <string/>
          </property>
          <property name="alignment">
-          <set>Qt::AlignCenter</set>
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
@@ -469,7 +469,7 @@ p, li { white-space: pre-wrap; }
           <string/>
          </property>
          <property name="alignment">
-          <set>Qt::AlignCenter</set>
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
@@ -485,7 +485,7 @@ p, li { white-space: pre-wrap; }
           <string/>
          </property>
          <property name="alignment">
-          <set>Qt::AlignCenter</set>
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
@@ -501,7 +501,7 @@ p, li { white-space: pre-wrap; }
           <string/>
          </property>
          <property name="alignment">
-          <set>Qt::AlignCenter</set>
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
@@ -517,7 +517,7 @@ p, li { white-space: pre-wrap; }
           <string/>
          </property>
          <property name="alignment">
-          <set>Qt::AlignCenter</set>
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
@@ -533,7 +533,7 @@ p, li { white-space: pre-wrap; }
           <string/>
          </property>
          <property name="alignment">
-          <set>Qt::AlignCenter</set>
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
@@ -544,7 +544,7 @@ p, li { white-space: pre-wrap; }
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>141</width>
+        <width>161</width>
         <height>531</height>
        </rect>
       </property>
@@ -568,8 +568,8 @@ p, li { white-space: pre-wrap; }
         <widget class="QLabel" name="labelFileName1">
          <property name="styleSheet">
           <string notr="true">QLabel {
-	font: normal bold 18px &quot;楷体&quot;;
-	color:rgb(223, 223, 223);
+	font: normal bold 20px &quot;楷体&quot;;
+	color: rgb(45, 98, 147);
 }</string>
          </property>
          <property name="text">
@@ -584,8 +584,8 @@ p, li { white-space: pre-wrap; }
         <widget class="QLabel" name="labelFileSize1">
          <property name="styleSheet">
           <string notr="true">QLabel {
-	font: normal bold 18px &quot;楷体&quot;;
-	color:rgb(223, 223, 223);
+	font: normal bold 20px &quot;楷体&quot;;
+	color: rgb(45, 98, 147);
 }</string>
          </property>
          <property name="text">
@@ -600,8 +600,8 @@ p, li { white-space: pre-wrap; }
         <widget class="QLabel" name="labelGlyphs1">
          <property name="styleSheet">
           <string notr="true">QLabel {
-	font: normal bold 18px &quot;楷体&quot;;
-	color:rgb(223, 223, 223);
+	font: normal bold 20px &quot;楷体&quot;;
+	color: rgb(45, 98, 147);
 }</string>
          </property>
          <property name="text">
@@ -616,8 +616,8 @@ p, li { white-space: pre-wrap; }
         <widget class="QLabel" name="labelCharacters1">
          <property name="styleSheet">
           <string notr="true">QLabel {
-	font: normal bold 18px &quot;楷体&quot;;
-	color:rgb(223, 223, 223);
+	font: normal bold 20px &quot;楷体&quot;;
+	color: rgb(45, 98, 147);
 }</string>
          </property>
          <property name="text">
@@ -632,8 +632,8 @@ p, li { white-space: pre-wrap; }
         <widget class="QLabel" name="labelCreatedTime1">
          <property name="styleSheet">
           <string notr="true">QLabel {
-	font: normal bold 18px &quot;楷体&quot;;
-	color:rgb(223, 223, 223);
+	font: normal bold 20px &quot;楷体&quot;;
+	color: rgb(45, 98, 147);
 }</string>
          </property>
          <property name="text">
@@ -648,8 +648,8 @@ p, li { white-space: pre-wrap; }
         <widget class="QLabel" name="labelModifiedTime1">
          <property name="styleSheet">
           <string notr="true">QLabel {
-	font: normal bold 18px &quot;楷体&quot;;
-	color:rgb(223, 223, 223);
+	font: normal bold 20px &quot;楷体&quot;;
+	color: rgb(45, 98, 147);
 }</string>
          </property>
          <property name="text">
@@ -664,8 +664,8 @@ p, li { white-space: pre-wrap; }
         <widget class="QLabel" name="labelFontFamily1">
          <property name="styleSheet">
           <string notr="true">QLabel {
-	font: normal bold 18px &quot;楷体&quot;;
-	color:rgb(223, 223, 223);
+	font: normal bold 20px &quot;楷体&quot;;
+	color: rgb(45, 98, 147);
 }</string>
          </property>
          <property name="text">
@@ -680,8 +680,8 @@ p, li { white-space: pre-wrap; }
         <widget class="QLabel" name="labelFontSubfamily1">
          <property name="styleSheet">
           <string notr="true">QLabel {
-	font: normal bold 18px &quot;楷体&quot;;
-	color:rgb(223, 223, 223);
+	font: normal bold 20px &quot;楷体&quot;;
+	color: rgb(45, 98, 147);
 }</string>
          </property>
          <property name="text">
@@ -696,8 +696,8 @@ p, li { white-space: pre-wrap; }
         <widget class="QLabel" name="labelUniqueFontID1">
          <property name="styleSheet">
           <string notr="true">QLabel {
-	font: normal bold 18px &quot;楷体&quot;;
-	color:rgb(223, 223, 223);
+	font: normal bold 20px &quot;楷体&quot;;
+	color: rgb(45, 98, 147);
 }</string>
          </property>
          <property name="text">
@@ -712,8 +712,8 @@ p, li { white-space: pre-wrap; }
         <widget class="QLabel" name="labelFullFontName1">
          <property name="styleSheet">
           <string notr="true">QLabel {
-	font: normal bold 18px &quot;楷体&quot;;
-	color:rgb(223, 223, 223);
+	font: normal bold 20px &quot;楷体&quot;;
+	color: rgb(45, 98, 147);
 }</string>
          </property>
          <property name="text">
@@ -728,8 +728,8 @@ p, li { white-space: pre-wrap; }
         <widget class="QLabel" name="labelVersion1">
          <property name="styleSheet">
           <string notr="true">QLabel {
-	font: normal bold 18px &quot;楷体&quot;;
-	color:rgb(223, 223, 223);
+	font: normal bold 20px &quot;楷体&quot;;
+	color: rgb(45, 98, 147);
 }</string>
          </property>
          <property name="text">
@@ -744,8 +744,8 @@ p, li { white-space: pre-wrap; }
         <widget class="QLabel" name="labelPostScript1">
          <property name="styleSheet">
           <string notr="true">QLabel {
-	font: normal bold 18px &quot;楷体&quot;;
-	color:rgb(223, 223, 223);
+	font: normal bold 20px &quot;楷体&quot;;
+	color: rgb(45, 98, 147);
 }</string>
          </property>
          <property name="text">
@@ -845,8 +845,8 @@ p, li { white-space: pre-wrap; }
      <string/>
     </property>
    </widget>
-   <zorder>labelBGTop</zorder>
    <zorder>labelBGRight</zorder>
+   <zorder>labelBGTop</zorder>
    <zorder>buttonReset</zorder>
    <zorder>buttonMinimize</zorder>
    <zorder>buttonClose</zorder>
