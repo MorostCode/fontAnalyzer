@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="resources">
+    <file>iconFile/fontAnalyzer.png</file>
+    <file>iconFile/logoPin.ico</file>
+    <file>iconFile/open.png</file>
+    <file>iconFile/reset.png</file>
+    <file>iconFile/text.png</file>
+    <file>iconFile/mac-minimize.png</file>
+    <file>iconFile/mac-close.png</file>
+    <file>iconFile/mac-close-hover.png</file>
+    <file>iconFile/mac-minimize-hover.png</file>
+  </qresource>
+</RCC>

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1004</width>
-    <height>850</height>
+    <width>1019</width>
+    <height>753</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -35,7 +35,7 @@
     <property name="styleSheet">
      <string notr="true">QPushButton {
 	padding: 2px;
-	image: url(./iconFile/reset.png);
+	image: url(:/resources/iconFile/reset.png);
 	border: None;
 	border-radius: 12px;
 }
@@ -65,13 +65,13 @@ QPushButton:pressed {
     <property name="styleSheet">
      <string notr="true">QPushButton {
 	border: None;
-	image: url(./iconFile/mac-minimize.png);
+	image: url(:resources/iconFile/mac-minimize.png);
 }
 QPushButton:hover {
-	image: url(./iconFile/mac-minimize-hover.png);
+	image: url(:resources/iconFile/mac-minimize-hover.png);
 }
 QPushButton:pressed {
-	image: url(./iconFile/mac-minimize-hover.png);
+	image: url(:resources/iconFile/mac-minimize-hover.png);
 }</string>
     </property>
     <property name="text">
@@ -99,13 +99,13 @@ QPushButton:pressed {
     <property name="styleSheet">
      <string notr="true">QPushButton {
 	border: None;
-	image: url(./iconFile/mac-close.png);
+	image: url(:resources/iconFile/mac-close.png);
 }
 QPushButton:hover {
-	image: url(./iconFile/mac-close-hover.png);
+	image: url(:resources/iconFile/mac-close-hover.png);
 }
 QPushButton:pressed {
-	image: url(./iconFile/mac-close-hover.png);
+	image: url(:resources/iconFile/mac-close-hover.png);
 }</string>
     </property>
     <property name="text">
@@ -150,7 +150,7 @@ QPushButton:pressed {
     <property name="styleSheet">
      <string notr="true">QPushButton {
 	border: None;
-	image: url(./iconFile/iconOpen.png);
+	image: url(:resources/iconFile/open.png);
 	border-radius: 12px;
 }
 QPushButton:hover {
@@ -177,7 +177,7 @@ QPushButton:pressed {
      <string>by morost</string>
     </property>
     <property name="styleSheet">
-     <string notr="true">image: url(./iconFile/fontAnalyzer.png);</string>
+     <string notr="true">image: url(:/resources/iconFile/fontAnalyzer.png);</string>
     </property>
     <property name="text">
      <string/>
@@ -568,7 +568,7 @@ p, li { white-space: pre-wrap; }
         <widget class="QLabel" name="labelFileName1">
          <property name="styleSheet">
           <string notr="true">QLabel {
-	font: normal bold 20px &quot;楷体&quot;;
+	font: normal bold 24px &quot;宋体&quot;;
 	color: rgb(45, 98, 147);
 }</string>
          </property>
@@ -838,7 +838,7 @@ p, li { white-space: pre-wrap; }
     <property name="styleSheet">
      <string notr="true">QPushButton {
 	border: None;
-	image: url(./iconFile/iconText.png);
+	image: url(:resources/iconFile/text.png);
 }</string>
     </property>
     <property name="text">
@@ -858,6 +858,8 @@ p, li { white-space: pre-wrap; }
    <zorder>buttonUpload_2</zorder>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="fontAnalyzer.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -1,23 +1,25 @@
 # -*- coding: utf-8 -*-
 from PyQt5.QtWidgets import QMainWindow, QFileDialog, QApplication, QDesktopWidget, QListWidgetItem
+from fontAnalyzerUI import Ui_MainWindow
 from PyQt5.QtGui import QIcon, QPixmap
 from PyQt5.QtCore import Qt, QPoint
 from fontTools.ttLib import TTFont
 from functools import partial
 from PyQt5.uic import loadUi
+import fontAnalyzer_rc
 import selfFontools
 import selfTools
 import sys
 import os
 
 
-class MainWindow(QMainWindow):
+class MainWindow(Ui_MainWindow, QMainWindow):
     # 初始化
     def __init__(self):
         super(MainWindow, self).__init__()
         self.version = '0.00'  # 设置版本号
-        # self.setupUi(self)  # 加载Ui
-        loadUi("fontAnalyzer.ui", self)  # 加载Ui文件
+        self.setupUi(self)  # 加载Ui
+        # loadUi("fontAnalyzer.ui", self)  # 加载Ui文件
         self.setWindowTitle("fontAnalyzer_v{}".format(self.version))  # 设置主窗口标题
         self.setWindowIcon(QIcon('./iconFile/logoPin.ico'))  # 设置图标
 
