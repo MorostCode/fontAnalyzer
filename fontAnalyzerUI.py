@@ -14,18 +14,20 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1019, 753)
+        MainWindow.resize(1101, 816)
         MainWindow.setStyleSheet("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
-        self.centralwidget.setStyleSheet("")
+        self.centralwidget.setStyleSheet("QWidget {\n"
+"    font-family:  \"LXGW WenKai\";\n"
+"}")
         self.centralwidget.setObjectName("centralwidget")
         self.buttonReset = QtWidgets.QPushButton(self.centralwidget)
-        self.buttonReset.setGeometry(QtCore.QRect(630, 18, 26, 26))
+        self.buttonReset.setGeometry(QtCore.QRect(800, 11, 30, 30))
         self.buttonReset.setStyleSheet("QPushButton {\n"
-"    padding: 2px;\n"
+"    padding: 3px;\n"
 "    image: url(:/resources/iconFile/reset.png);\n"
 "    border: None;\n"
-"    border-radius: 12px;\n"
+"    border-radius: 14px;\n"
 "}\n"
 "QPushButton:hover {\n"
 "    background-color: rgb(75, 75, 75);\n"
@@ -36,7 +38,7 @@ class Ui_MainWindow(object):
         self.buttonReset.setText("")
         self.buttonReset.setObjectName("buttonReset")
         self.buttonMinimize = QtWidgets.QPushButton(self.centralwidget)
-        self.buttonMinimize.setGeometry(QtCore.QRect(740, 20, 18, 18))
+        self.buttonMinimize.setGeometry(QtCore.QRect(960, 17, 18, 18))
         self.buttonMinimize.setStyleSheet("QPushButton {\n"
 "    border: None;\n"
 "    image: url(:resources/iconFile/mac-minimize.png);\n"
@@ -51,7 +53,7 @@ class Ui_MainWindow(object):
         self.buttonMinimize.setIconSize(QtCore.QSize(16, 16))
         self.buttonMinimize.setObjectName("buttonMinimize")
         self.buttonClose = QtWidgets.QPushButton(self.centralwidget)
-        self.buttonClose.setGeometry(QtCore.QRect(770, 20, 18, 18))
+        self.buttonClose.setGeometry(QtCore.QRect(991, 17, 18, 18))
         self.buttonClose.setStyleSheet("QPushButton {\n"
 "    border: None;\n"
 "    image: url(:resources/iconFile/mac-close.png);\n"
@@ -65,7 +67,7 @@ class Ui_MainWindow(object):
         self.buttonClose.setText("")
         self.buttonClose.setObjectName("buttonClose")
         self.labelBGTop = QtWidgets.QLabel(self.centralwidget)
-        self.labelBGTop.setGeometry(QtCore.QRect(5, 5, 800, 50))
+        self.labelBGTop.setGeometry(QtCore.QRect(0, 0, 1024, 50))
         self.labelBGTop.setStyleSheet("QLabel {\n"
 "    background-color: rgb(43, 43, 43);\n"
 "    border-top: 2px solid rgb(88, 88, 88);\n"
@@ -77,11 +79,11 @@ class Ui_MainWindow(object):
         self.labelBGTop.setText("")
         self.labelBGTop.setObjectName("labelBGTop")
         self.buttonUpload = QtWidgets.QPushButton(self.centralwidget)
-        self.buttonUpload.setGeometry(QtCore.QRect(590, 18, 26, 26))
+        self.buttonUpload.setGeometry(QtCore.QRect(760, 11, 30, 30))
         self.buttonUpload.setStyleSheet("QPushButton {\n"
 "    border: None;\n"
 "    image: url(:resources/iconFile/open.png);\n"
-"    border-radius: 12px;\n"
+"    border-radius: 14px;\n"
 "}\n"
 "QPushButton:hover {\n"
 "    background-color: rgb(75, 75, 75);\n"
@@ -92,15 +94,17 @@ class Ui_MainWindow(object):
         self.buttonUpload.setText("")
         self.buttonUpload.setObjectName("buttonUpload")
         self.labelLogo = QtWidgets.QLabel(self.centralwidget)
-        self.labelLogo.setGeometry(QtCore.QRect(8, 12, 211, 41))
-        self.labelLogo.setStyleSheet("image: url(:/resources/iconFile/fontAnalyzer.png);")
-        self.labelLogo.setText("")
+        self.labelLogo.setGeometry(QtCore.QRect(0, 0, 210, 50))
+        self.labelLogo.setStyleSheet("QLabel {\n"
+"    font-size: 30px;\n"
+"    color: rgb(19, 127, 255);\n"
+"}")
         self.labelLogo.setAlignment(QtCore.Qt.AlignCenter)
         self.labelLogo.setObjectName("labelLogo")
         self.lineUpload = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineUpload.setGeometry(QtCore.QRect(280, 15, 291, 30))
+        self.lineUpload.setGeometry(QtCore.QRect(345, 11, 400, 30))
         self.lineUpload.setStyleSheet("QLineEdit {\n"
-"    font: normal bold 18px \"黑体\";\n"
+"    font: normal bold 18px;\n"
 "    color: rgb(223, 223, 223);\n"
 "    border-radius: 14px;\n"
 "    background-color: rgb(75, 75, 75);\n"
@@ -113,9 +117,9 @@ class Ui_MainWindow(object):
         self.lineUpload.setClearButtonEnabled(False)
         self.lineUpload.setObjectName("lineUpload")
         self.listMenu = QtWidgets.QListWidget(self.centralwidget)
-        self.listMenu.setGeometry(QtCore.QRect(5, 55, 210, 550))
+        self.listMenu.setGeometry(QtCore.QRect(0, 50, 210, 736))
         self.listMenu.setStyleSheet("QListWidget {\n"
-"    font: normal bold 20px \"楷体\";\n"
+"    font: normal bold 22px;\n"
 "    color: rgb(175, 175, 175);\n"
 "    background-color: rgb(32, 32, 32);\n"
 "    padding-top: 10px;\n"
@@ -152,139 +156,111 @@ class Ui_MainWindow(object):
         item.setTextAlignment(QtCore.Qt.AlignCenter)
         self.listMenu.addItem(item)
         self.pages = QtWidgets.QStackedWidget(self.centralwidget)
-        self.pages.setGeometry(QtCore.QRect(215, 55, 590, 550))
-        self.pages.setStyleSheet("")
+        self.pages.setGeometry(QtCore.QRect(210, 50, 814, 736))
+        self.pages.setStyleSheet("QStackedWidget {\n"
+"    background-color: rgb(37, 37, 37);\n"
+"    border-bottom-right-radius: 14px;\n"
+"    border-bottom: 2px solid rgb(88, 88, 88);\n"
+"    border-right: 2px solid rgb(88, 88, 88);\n"
+"}")
         self.pages.setFrameShadow(QtWidgets.QFrame.Plain)
         self.pages.setObjectName("pages")
         self.pageInitial = QtWidgets.QWidget()
         self.pageInitial.setObjectName("pageInitial")
         self.labelMoreInfo = QtWidgets.QLabel(self.pageInitial)
-        self.labelMoreInfo.setGeometry(QtCore.QRect(480, 510, 91, 31))
-        self.labelMoreInfo.setStyleSheet("QLabel {\n"
-"    font: normal bold 20px \"楷体\";\n"
-"}")
+        self.labelMoreInfo.setGeometry(QtCore.QRect(700, 690, 91, 31))
+        self.labelMoreInfo.setStyleSheet("")
         self.labelMoreInfo.setAlignment(QtCore.Qt.AlignCenter)
         self.labelMoreInfo.setOpenExternalLinks(True)
         self.labelMoreInfo.setObjectName("labelMoreInfo")
         self.pages.addWidget(self.pageInitial)
         self.pageBaseInfo = QtWidgets.QWidget()
+        self.pageBaseInfo.setStyleSheet("QLabel {\n"
+"    font: normal bold 20px;\n"
+"    color: rgb(13, 115, 167);\n"
+"}")
         self.pageBaseInfo.setObjectName("pageBaseInfo")
         self.verticalLayoutWidget_2 = QtWidgets.QWidget(self.pageBaseInfo)
-        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(190, 10, 391, 531))
+        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(210, 10, 591, 711))
         self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
         self.vLayout2 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
         self.vLayout2.setContentsMargins(0, 0, 0, 0)
         self.vLayout2.setObjectName("vLayout2")
         self.labelFileName2 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
-        self.labelFileName2.setStyleSheet("QLabel {\n"
-"    font: normal bold 18px \"楷体\";\n"
-"    color: rgb(223, 223, 223);\n"
-"}")
+        self.labelFileName2.setStyleSheet("color: white;")
         self.labelFileName2.setText("")
         self.labelFileName2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.labelFileName2.setObjectName("labelFileName2")
         self.vLayout2.addWidget(self.labelFileName2)
         self.labelFileSize2 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
-        self.labelFileSize2.setStyleSheet("QLabel {\n"
-"    font: normal bold 18px \"楷体\";\n"
-"    color: rgb(223, 223, 223);\n"
-"}")
+        self.labelFileSize2.setStyleSheet("color: white;")
         self.labelFileSize2.setText("")
         self.labelFileSize2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.labelFileSize2.setObjectName("labelFileSize2")
         self.vLayout2.addWidget(self.labelFileSize2)
         self.labelGlyphs2 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
-        self.labelGlyphs2.setStyleSheet("QLabel {\n"
-"    font: normal bold 18px \"楷体\";\n"
-"    color:rgb(223, 223, 223);\n"
-"}")
+        self.labelGlyphs2.setStyleSheet("color: white;")
         self.labelGlyphs2.setText("")
         self.labelGlyphs2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.labelGlyphs2.setObjectName("labelGlyphs2")
         self.vLayout2.addWidget(self.labelGlyphs2)
         self.labelCharacters2 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
-        self.labelCharacters2.setStyleSheet("QLabel {\n"
-"    font: normal bold 18px \"楷体\";\n"
-"    color:rgb(223, 223, 223);\n"
-"}")
+        self.labelCharacters2.setAutoFillBackground(False)
+        self.labelCharacters2.setStyleSheet("color: white;")
         self.labelCharacters2.setText("")
         self.labelCharacters2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.labelCharacters2.setObjectName("labelCharacters2")
         self.vLayout2.addWidget(self.labelCharacters2)
         self.labelCreatedTime2 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
-        self.labelCreatedTime2.setStyleSheet("QLabel {\n"
-"    font: normal bold 18px \"楷体\";\n"
-"    color:rgb(223, 223, 223);\n"
-"}")
+        self.labelCreatedTime2.setStyleSheet("color: white;")
         self.labelCreatedTime2.setText("")
         self.labelCreatedTime2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.labelCreatedTime2.setObjectName("labelCreatedTime2")
         self.vLayout2.addWidget(self.labelCreatedTime2)
         self.labelModifiedTime2 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
-        self.labelModifiedTime2.setStyleSheet("QLabel {\n"
-"    font: normal bold 18px \"楷体\";\n"
-"    color:rgb(223, 223, 223);\n"
-"}")
+        self.labelModifiedTime2.setStyleSheet("color: white;")
         self.labelModifiedTime2.setText("")
         self.labelModifiedTime2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.labelModifiedTime2.setObjectName("labelModifiedTime2")
         self.vLayout2.addWidget(self.labelModifiedTime2)
         self.labelFontFamily2 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
-        self.labelFontFamily2.setStyleSheet("QLabel {\n"
-"    font: normal bold 18px \"楷体\";\n"
-"    color:rgb(223, 223, 223);\n"
-"}")
+        self.labelFontFamily2.setStyleSheet("color: white;")
         self.labelFontFamily2.setText("")
         self.labelFontFamily2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.labelFontFamily2.setObjectName("labelFontFamily2")
         self.vLayout2.addWidget(self.labelFontFamily2)
         self.labelFontSubfamily2 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
-        self.labelFontSubfamily2.setStyleSheet("QLabel {\n"
-"    font: normal bold 18px \"楷体\";\n"
-"    color:rgb(223, 223, 223);\n"
-"}")
+        self.labelFontSubfamily2.setStyleSheet("color: white;")
         self.labelFontSubfamily2.setText("")
         self.labelFontSubfamily2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.labelFontSubfamily2.setObjectName("labelFontSubfamily2")
         self.vLayout2.addWidget(self.labelFontSubfamily2)
         self.labelUniqueFontID2 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
-        self.labelUniqueFontID2.setStyleSheet("QLabel {\n"
-"    font: normal bold 18px \"楷体\";\n"
-"    color:rgb(223, 223, 223);\n"
-"}")
+        self.labelUniqueFontID2.setStyleSheet("color: white;")
         self.labelUniqueFontID2.setText("")
         self.labelUniqueFontID2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.labelUniqueFontID2.setObjectName("labelUniqueFontID2")
         self.vLayout2.addWidget(self.labelUniqueFontID2)
         self.labelFullFontName2 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
-        self.labelFullFontName2.setStyleSheet("QLabel {\n"
-"    font: normal bold 18px \"楷体\";\n"
-"    color:rgb(223, 223, 223);\n"
-"}")
+        self.labelFullFontName2.setStyleSheet("color: white;")
         self.labelFullFontName2.setText("")
         self.labelFullFontName2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.labelFullFontName2.setObjectName("labelFullFontName2")
         self.vLayout2.addWidget(self.labelFullFontName2)
         self.labelVersion2 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
-        self.labelVersion2.setStyleSheet("QLabel {\n"
-"    font: normal bold 18px \"楷体\";\n"
-"    color:rgb(223, 223, 223);\n"
-"}")
+        self.labelVersion2.setStyleSheet("color: white;")
         self.labelVersion2.setText("")
         self.labelVersion2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.labelVersion2.setObjectName("labelVersion2")
         self.vLayout2.addWidget(self.labelVersion2)
         self.labelPostScript2 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
-        self.labelPostScript2.setStyleSheet("QLabel {\n"
-"    font: normal bold 18px \"楷体\";\n"
-"    color:rgb(223, 223, 223);\n"
-"}")
+        self.labelPostScript2.setStyleSheet("color: white;")
         self.labelPostScript2.setText("")
         self.labelPostScript2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.labelPostScript2.setObjectName("labelPostScript2")
         self.vLayout2.addWidget(self.labelPostScript2)
         self.verticalLayoutWidget = QtWidgets.QWidget(self.pageBaseInfo)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 10, 161, 531))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 10, 188, 711))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.vLayout1 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.vLayout1.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
@@ -292,98 +268,62 @@ class Ui_MainWindow(object):
         self.vLayout1.setSpacing(1)
         self.vLayout1.setObjectName("vLayout1")
         self.labelFileName1 = QtWidgets.QLabel(self.verticalLayoutWidget)
-        self.labelFileName1.setStyleSheet("QLabel {\n"
-"    font: normal bold 24px \"宋体\";\n"
-"    color: rgb(45, 98, 147);\n"
-"}")
+        self.labelFileName1.setStyleSheet("")
         self.labelFileName1.setAlignment(QtCore.Qt.AlignCenter)
         self.labelFileName1.setObjectName("labelFileName1")
         self.vLayout1.addWidget(self.labelFileName1)
         self.labelFileSize1 = QtWidgets.QLabel(self.verticalLayoutWidget)
-        self.labelFileSize1.setStyleSheet("QLabel {\n"
-"    font: normal bold 20px \"楷体\";\n"
-"    color: rgb(45, 98, 147);\n"
-"}")
+        self.labelFileSize1.setStyleSheet("")
         self.labelFileSize1.setAlignment(QtCore.Qt.AlignCenter)
         self.labelFileSize1.setObjectName("labelFileSize1")
         self.vLayout1.addWidget(self.labelFileSize1)
         self.labelGlyphs1 = QtWidgets.QLabel(self.verticalLayoutWidget)
-        self.labelGlyphs1.setStyleSheet("QLabel {\n"
-"    font: normal bold 20px \"楷体\";\n"
-"    color: rgb(45, 98, 147);\n"
-"}")
+        self.labelGlyphs1.setStyleSheet("")
         self.labelGlyphs1.setAlignment(QtCore.Qt.AlignCenter)
         self.labelGlyphs1.setObjectName("labelGlyphs1")
         self.vLayout1.addWidget(self.labelGlyphs1)
         self.labelCharacters1 = QtWidgets.QLabel(self.verticalLayoutWidget)
-        self.labelCharacters1.setStyleSheet("QLabel {\n"
-"    font: normal bold 20px \"楷体\";\n"
-"    color: rgb(45, 98, 147);\n"
-"}")
+        self.labelCharacters1.setStyleSheet("")
         self.labelCharacters1.setAlignment(QtCore.Qt.AlignCenter)
         self.labelCharacters1.setObjectName("labelCharacters1")
         self.vLayout1.addWidget(self.labelCharacters1)
         self.labelCreatedTime1 = QtWidgets.QLabel(self.verticalLayoutWidget)
-        self.labelCreatedTime1.setStyleSheet("QLabel {\n"
-"    font: normal bold 20px \"楷体\";\n"
-"    color: rgb(45, 98, 147);\n"
-"}")
+        self.labelCreatedTime1.setStyleSheet("")
         self.labelCreatedTime1.setAlignment(QtCore.Qt.AlignCenter)
         self.labelCreatedTime1.setObjectName("labelCreatedTime1")
         self.vLayout1.addWidget(self.labelCreatedTime1)
         self.labelModifiedTime1 = QtWidgets.QLabel(self.verticalLayoutWidget)
-        self.labelModifiedTime1.setStyleSheet("QLabel {\n"
-"    font: normal bold 20px \"楷体\";\n"
-"    color: rgb(45, 98, 147);\n"
-"}")
+        self.labelModifiedTime1.setStyleSheet("")
         self.labelModifiedTime1.setAlignment(QtCore.Qt.AlignCenter)
         self.labelModifiedTime1.setObjectName("labelModifiedTime1")
         self.vLayout1.addWidget(self.labelModifiedTime1)
         self.labelFontFamily1 = QtWidgets.QLabel(self.verticalLayoutWidget)
-        self.labelFontFamily1.setStyleSheet("QLabel {\n"
-"    font: normal bold 20px \"楷体\";\n"
-"    color: rgb(45, 98, 147);\n"
-"}")
+        self.labelFontFamily1.setStyleSheet("")
         self.labelFontFamily1.setAlignment(QtCore.Qt.AlignCenter)
         self.labelFontFamily1.setObjectName("labelFontFamily1")
         self.vLayout1.addWidget(self.labelFontFamily1)
         self.labelFontSubfamily1 = QtWidgets.QLabel(self.verticalLayoutWidget)
-        self.labelFontSubfamily1.setStyleSheet("QLabel {\n"
-"    font: normal bold 20px \"楷体\";\n"
-"    color: rgb(45, 98, 147);\n"
-"}")
+        self.labelFontSubfamily1.setStyleSheet("")
         self.labelFontSubfamily1.setAlignment(QtCore.Qt.AlignCenter)
         self.labelFontSubfamily1.setObjectName("labelFontSubfamily1")
         self.vLayout1.addWidget(self.labelFontSubfamily1)
         self.labelUniqueFontID1 = QtWidgets.QLabel(self.verticalLayoutWidget)
-        self.labelUniqueFontID1.setStyleSheet("QLabel {\n"
-"    font: normal bold 20px \"楷体\";\n"
-"    color: rgb(45, 98, 147);\n"
-"}")
+        self.labelUniqueFontID1.setStyleSheet("")
         self.labelUniqueFontID1.setAlignment(QtCore.Qt.AlignCenter)
         self.labelUniqueFontID1.setObjectName("labelUniqueFontID1")
         self.vLayout1.addWidget(self.labelUniqueFontID1)
         self.labelFullFontName1 = QtWidgets.QLabel(self.verticalLayoutWidget)
-        self.labelFullFontName1.setStyleSheet("QLabel {\n"
-"    font: normal bold 20px \"楷体\";\n"
-"    color: rgb(45, 98, 147);\n"
-"}")
+        self.labelFullFontName1.setStyleSheet("")
         self.labelFullFontName1.setAlignment(QtCore.Qt.AlignCenter)
         self.labelFullFontName1.setObjectName("labelFullFontName1")
         self.vLayout1.addWidget(self.labelFullFontName1)
         self.labelVersion1 = QtWidgets.QLabel(self.verticalLayoutWidget)
-        self.labelVersion1.setStyleSheet("QLabel {\n"
-"    font: normal bold 20px \"楷体\";\n"
-"    color: rgb(45, 98, 147);\n"
-"}")
+        self.labelVersion1.setStyleSheet("")
         self.labelVersion1.setAlignment(QtCore.Qt.AlignCenter)
         self.labelVersion1.setObjectName("labelVersion1")
         self.vLayout1.addWidget(self.labelVersion1)
         self.labelPostScript1 = QtWidgets.QLabel(self.verticalLayoutWidget)
-        self.labelPostScript1.setStyleSheet("QLabel {\n"
-"    font: normal bold 20px \"楷体\";\n"
-"    color: rgb(45, 98, 147);\n"
-"}")
+        self.labelPostScript1.setStyleSheet("")
         self.labelPostScript1.setAlignment(QtCore.Qt.AlignCenter)
         self.labelPostScript1.setObjectName("labelPostScript1")
         self.vLayout1.addWidget(self.labelPostScript1)
@@ -408,25 +348,14 @@ class Ui_MainWindow(object):
 "}")
         self.label_3.setObjectName("label_3")
         self.pages.addWidget(self.pageCharsPreview)
-        self.labelBGRight = QtWidgets.QLabel(self.centralwidget)
-        self.labelBGRight.setGeometry(QtCore.QRect(215, 55, 590, 550))
-        self.labelBGRight.setStyleSheet("QLabel {\n"
-"    background-color: rgb(37, 37, 37);\n"
-"    border-bottom-right-radius: 14px;\n"
-"    border-bottom:2px solid rgb(88, 88, 88);\n"
-"    border-right:2px solid rgb(88, 88, 88);\n"
-"}")
-        self.labelBGRight.setText("")
-        self.labelBGRight.setObjectName("labelBGRight")
         self.buttonUpload_2 = QtWidgets.QPushButton(self.centralwidget)
-        self.buttonUpload_2.setGeometry(QtCore.QRect(290, 20, 22, 22))
+        self.buttonUpload_2.setGeometry(QtCore.QRect(355, 15, 22, 22))
         self.buttonUpload_2.setStyleSheet("QPushButton {\n"
 "    border: None;\n"
 "    image: url(:resources/iconFile/text.png);\n"
 "}")
         self.buttonUpload_2.setText("")
         self.buttonUpload_2.setObjectName("buttonUpload_2")
-        self.labelBGRight.raise_()
         self.labelBGTop.raise_()
         self.buttonReset.raise_()
         self.buttonMinimize.raise_()
@@ -440,7 +369,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.pages.setCurrentIndex(1)
+        self.pages.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -451,6 +380,7 @@ class Ui_MainWindow(object):
         self.buttonClose.setToolTip(_translate("MainWindow", "close"))
         self.buttonUpload.setToolTip(_translate("MainWindow", "upload"))
         self.labelLogo.setToolTip(_translate("MainWindow", "by morost"))
+        self.labelLogo.setText(_translate("MainWindow", "FontAnalyzer"))
         self.lineUpload.setPlaceholderText(_translate("MainWindow", "Upload Font"))
         __sortingEnabled = self.listMenu.isSortingEnabled()
         self.listMenu.setSortingEnabled(False)
@@ -464,7 +394,7 @@ class Ui_MainWindow(object):
         self.labelMoreInfo.setText(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style><style>a{ TEXT-DECORATION:none }</style> </head><body style=\" font-family:\'楷体\'; font-size:20px; font-weight:600; font-style:normal;\">\n"
+"</style><style>a{ TEXT-DECORATION:none }</style> </head><body style=\" font-family:\'LXGW WenKai\'; font-size:20px; font-weight:600; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a href=\"https://github.com/MorostCode/fontAnalyzer\"><span style=\" color:#3d85c6;\">MoreInfo</span></a></p></body></html>"))
         self.labelFileName1.setText(_translate("MainWindow", "FileName"))
         self.labelFileSize1.setText(_translate("MainWindow", "FileSize"))

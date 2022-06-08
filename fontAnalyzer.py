@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from PyQt5.QtWidgets import QMainWindow, QFileDialog, QApplication, QDesktopWidget, QListWidgetItem
 from fontAnalyzerUI import Ui_MainWindow
-from PyQt5.QtGui import QIcon, QPixmap
+from PyQt5.QtGui import QIcon, QPixmap, QFontDatabase, QFont
 from PyQt5.QtCore import Qt, QPoint
 from fontTools.ttLib import TTFont
 from functools import partial
@@ -40,13 +40,19 @@ class MainWindow(Ui_MainWindow, QMainWindow):
     # 程序初始化预执行步骤
     def adv_commands(self):
         # self.labelVersion.setText('Version:{}'.format(self.version))  # 设定版本号
-        self.setFixedSize(810, 610)  # 设定窗口尺寸(固定尺寸)
+        self.setFixedSize(1024, 786)  # 设定窗口尺寸(固定尺寸)
         screenSize = QDesktopWidget().screenGeometry()  # 获取屏幕尺寸
         selfSize = self.geometry()  # 获取程序窗口尺寸
         newLeft = int((screenSize.width() - selfSize.width()) / 2)
         newTop = int((screenSize.height() - selfSize.height()) / 2)
         self.move(newLeft, newTop)  # 移动到居中位置
         self.pages.setCurrentIndex(0)  # 显示初始page
+
+        # 添加自定义字体
+        fontDb = QFontDatabase()
+        fontDb.addApplicationFont(":resources/fontFile/霞骛文楷.ttf")
+        # print(fontDb.applicationFontFamilies(fontDb.addApplicationFont(":resources/fontFile/霞骛文楷.ttf")))
+        self.setFont(QFont('LXGW WenKai'))
         # 预执行所有绑定函数
         self.bind()
 
@@ -82,6 +88,9 @@ class MainWindow(Ui_MainWindow, QMainWindow):
 
     # 填充BaseInfo界面
     def set_base_info(self):
+        # 如果仍处于初始页面，则自动跳转到BaseInfo界面
+        if self.pages.currentIndex() == 0:
+            self.pages.setCurrentIndex(1)
         # 获取信息
         fileName = os.path.basename(self.fontPath)  # 文件名
         fileSize = selfTools.get_size(self.fontPath)  # 文件大小

@@ -1,6 +1,6 @@
 <RCC>
   <qresource prefix="resources">
-    <file>iconFile/fontAnalyzer.png</file>
+    <file>fontFile/霞骛文楷.ttf</file>
     <file>iconFile/logoPin.ico</file>
     <file>iconFile/open.png</file>
     <file>iconFile/reset.png</file>
