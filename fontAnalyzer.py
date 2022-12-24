@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 from PyQt5.QtWidgets import QMainWindow, QFileDialog, QApplication, QDesktopWidget, QListWidgetItem
-from fontAnalyzerUI import Ui_MainWindow
 from PyQt5.QtGui import QIcon, QPixmap, QFontDatabase, QFont
+from subModule import baseInfo, extendInfo, charsPreview
+from fontAnalyzerUI import Ui_MainWindow
 from PyQt5.QtCore import Qt, QPoint
 from fontTools.ttLib import TTFont
 from functools import partial
-from PyQt5.uic import loadUi
 import fontAnalyzer_rc
 import selfFontools
 import selfTools
@@ -35,28 +35,31 @@ class MainWindow(Ui_MainWindow, QMainWindow):
         self.endPos = None
         self.isTracking = None
 
+        # 初始化所有子模块
+        self.baseInfo = baseInfo.BaseInfo(self)
+        self.extendInfo = extendInfo.ExtendInfo(self)
         self.adv_commands()  # 执行预指令
 
     # 程序初始化预执行步骤
     def adv_commands(self):
-        # self.labelVersion.setText('Version:{}'.format(self.version))  # 设定版本号
         self.setFixedSize(1024, 786)  # 设定窗口尺寸(固定尺寸)
         screenSize = QDesktopWidget().screenGeometry()  # 获取屏幕尺寸
         selfSize = self.geometry()  # 获取程序窗口尺寸
         newLeft = int((screenSize.width() - selfSize.width()) / 2)
         newTop = int((screenSize.height() - selfSize.height()) / 2)
         self.move(newLeft, newTop)  # 移动到居中位置
-        self.pages.setCurrentIndex(0)  # 显示初始page
+        self.pages.setCurrentIndex(0)  # 默认显示初始page
 
         # 添加自定义字体
         fontDb = QFontDatabase()
         fontDb.addApplicationFont(":resources/fontFile/霞骛文楷.ttf")
         # print(fontDb.applicationFontFamilies(fontDb.addApplicationFont(":resources/fontFile/霞骛文楷.ttf")))
         self.setFont(QFont('LXGW WenKai'))
+
         # 预执行所有绑定函数
         self.bind()
 
-    # 绑定按钮
+    # 绑定主界面基础按钮
     def bind(self):
         self.buttonClose.clicked.connect(self.close_window)  # 关闭按钮
         self.buttonMinimize.clicked.connect(self.minimize_window)  # 最小化按钮
@@ -72,7 +75,7 @@ class MainWindow(Ui_MainWindow, QMainWindow):
             # 初始化字体数据
             self.fontPath = fontPath
             self.lineUpload.setText(os.path.basename(self.fontPath))  # 显示字体名
-            self.set_base_info()  # 填充BaseInfo界面
+            self.baseInfo.set_base_info()  # 填充BaseInfo界面
             self.set_extend_info()  # 填充ExtendInfo界面
 
     # 切换页面
@@ -86,36 +89,6 @@ class MainWindow(Ui_MainWindow, QMainWindow):
         else:
             pass
 
-    # 填充BaseInfo界面
-    def set_base_info(self):
-        # 如果仍处于初始页面，则自动跳转到BaseInfo界面
-        if self.pages.currentIndex() == 0:
-            self.pages.setCurrentIndex(1)
-        # 获取信息
-        fileName = os.path.basename(self.fontPath)  # 文件名
-        fileSize = selfTools.get_size(self.fontPath)  # 文件大小
-        glyphs, chars = selfFontools.get_glyph_num(self.fontPath)  # 字形数，字符数
-        createdTime, modifiedTime = selfFontools.get_time(self.fontPath)  # 创建日期，修改日期
-        baseDict = selfFontools.get_font_base_info(self.fontPath)  # 其他基础信息
-        # 设置文件基础信息
-        self.labelFileName2.setText(fileName)
-        self.labelFileSize2.setText(fileSize)
-        self.labelGlyphs2.setText(str(glyphs))
-        self.labelCharacters2.setText(str(chars))
-        self.labelCreatedTime2.setText(createdTime)
-        self.labelModifiedTime2.setText(modifiedTime)
-        # 设置字体基础信息（取自win平台US语言）
-        self.labelFontFamily2.setText(baseDict["Family"])
-        self.labelFontSubfamily2.setText(baseDict["Subfamily"])
-        self.labelUniqueFontID2.setText(baseDict["UniqueID"])
-        self.labelFullFontName2.setText(baseDict["FullName"])
-        self.labelVersion2.setText(baseDict["Version"])
-        self.labelPostScript2.setText(baseDict["PostScript"])
-
-    # 填充ExtendInfo界面
-    def set_extend_info(self):
-        pass
-
     # 重置界面
     def reset(self):
         # 设置所有列表项为未选中
@@ -123,19 +96,7 @@ class MainWindow(Ui_MainWindow, QMainWindow):
             self.listMenu.item(i).setSelected(False)
         self.lineUpload.clear()  # 清空字体名
         self.pages.setCurrentIndex(0)  # 返回初始页面
-        # 清空BaseInfo界面
-        self.labelFileName2.clear()
-        self.labelFileSize2.clear()
-        self.labelGlyphs2.clear()
-        self.labelCharacters2.clear()
-        self.labelCreatedTime2.clear()
-        self.labelModifiedTime2.clear()
-        self.labelFontFamily2.clear()
-        self.labelFontSubfamily2.clear()
-        self.labelUniqueFontID2.clear()
-        self.labelFullFontName2.clear()
-        self.labelVersion2.clear()
-        self.labelPostScript2.clear()
+        self.baseInfo.reset_base_info()  # 重置BaseInfo界面
 
     # 关闭界面
     def close_window(self):
@@ -166,11 +127,7 @@ class MainWindow(Ui_MainWindow, QMainWindow):
             self.endPos = event.pos() - self.startPos
             self.move(self.pos() + self.endPos)  # 移动窗口
 
-    # # 鼠标双击事件
-    # def mouseDoubleClickEvent(self, event):
-    #     clickObjName = self.childAt(event.x(), event.y()).objectName()
-    #     if clickObjName == "labelFont":
-    #         self.uploadFont()
+    # TODO：编写拖入事件：从外部直接拖入字体包可以等效于上传操作
 
 
 if __name__ == '__main__':
